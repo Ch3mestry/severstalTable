@@ -21,7 +21,7 @@ function TableRow({ node, depth = 0 }) {
               <button
                 className={`${styles.toggle} ${isExpanded ? styles.toggleExpanded : ""}`}
                 onClick={handleToggle}
-                aria-label={isExpanded ? "Collapse" : "Expand"}
+                aria-label={isExpanded ? "Свернуть" : "Развернуть"}
               >
                 &#9654;
               </button>
@@ -37,7 +37,7 @@ function TableRow({ node, depth = 0 }) {
           <span
             className={`${styles.badge} ${node.isActive ? styles.badgeActive : styles.badgeInactive}`}
           >
-            {node.isActive ? "Active" : "Inactive"}
+            {node.isActive ? "Активен" : "Неактивен"}
           </span>
         </td>
       </tr>

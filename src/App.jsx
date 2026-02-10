@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <header className={styles.header}>
-        <h1 className={styles.title}>Users</h1>
+        <h1 className={styles.title}>Пользователи</h1>
       </header>
       <DataTable data={users} />
     </div>

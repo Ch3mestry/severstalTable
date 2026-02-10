@@ -4,14 +4,14 @@ import TableRow from "../TableRow/TableRow";
 import styles from "./DataTable.module.css";
 
 const FILTER_OPTIONS = [
-  { value: "all", label: "All" },
-  { value: "active", label: "Active" },
-  { value: "inactive", label: "Inactive" },
+  { value: "all", label: "Все" },
+  { value: "active", label: "Активные" },
+  { value: "inactive", label: "Неактивные" },
 ];
 
 const SORTABLE_COLUMNS = [
-  { key: "balance", label: "Balance" },
-  { key: "email", label: "Email" },
+  { key: "balance", label: "Баланс" },
+  { key: "email", label: "Почта" },
 ];
 
 function DataTable({ data }) {
@@ -52,7 +52,7 @@ function DataTable({ data }) {
     <div className={styles.root}>
       <div className={styles.toolbar}>
         <div className={styles.filter}>
-          <span className={styles.filterLabel}>Status:</span>
+          <span className={styles.filterLabel}>Статус:</span>
           {FILTER_OPTIONS.map((option) => (
             <button
               key={option.value}
@@ -69,7 +69,7 @@ function DataTable({ data }) {
         <table className={styles.table}>
           <thead>
             <tr>
-              <th className={styles.header}>Name</th>
+              <th className={styles.header}>Имя</th>
               {SORTABLE_COLUMNS.map((col) => (
                 <th
                   key={col.key}
@@ -83,7 +83,7 @@ function DataTable({ data }) {
                 </th>
               ))}
               <th className={`${styles.header} ${styles.headerCenter}`}>
-                Status
+                Статус
               </th>
             </tr>
           </thead>
@@ -93,7 +93,7 @@ function DataTable({ data }) {
             ) : (
               <tr>
                 <td className={styles.empty} colSpan={4}>
-                  No records found
+                  Записи не найдены
                 </td>
               </tr>
             )}
