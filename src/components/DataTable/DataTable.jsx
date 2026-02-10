@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { buildTree, sortTree, filterTree } from "../../utils/tree";
 import TableRow from "../TableRow/TableRow";
-import "./DataTable.css";
+import styles from "./DataTable.module.css";
 
 const FILTER_OPTIONS = [
   { value: "all", label: "All" },
@@ -49,14 +49,14 @@ function DataTable({ data }) {
   }, [data, filterValue, sortField, sortDirection]);
 
   return (
-    <div className="data-table">
-      <div className="data-table__toolbar">
-        <div className="data-table__filter">
-          <span className="data-table__filter-label">Status:</span>
+    <div className={styles.root}>
+      <div className={styles.toolbar}>
+        <div className={styles.filter}>
+          <span className={styles.filterLabel}>Status:</span>
           {FILTER_OPTIONS.map((option) => (
             <button
               key={option.value}
-              className={`data-table__filter-btn ${activeFilter === option.value ? "data-table__filter-btn--active" : ""}`}
+              className={`${styles.filterBtn} ${activeFilter === option.value ? styles.filterBtnActive : ""}`}
               onClick={() => setActiveFilter(option.value)}
             >
               {option.label}
@@ -65,24 +65,24 @@ function DataTable({ data }) {
         </div>
       </div>
 
-      <div className="data-table__wrapper">
-        <table className="data-table__table">
+      <div className={styles.wrapper}>
+        <table className={styles.table}>
           <thead>
             <tr>
-              <th className="data-table__header">Name</th>
+              <th className={styles.header}>Name</th>
               {SORTABLE_COLUMNS.map((col) => (
                 <th
                   key={col.key}
-                  className="data-table__header data-table__header--sortable"
+                  className={`${styles.header} ${styles.headerSortable}`}
                   onClick={() => handleSort(col.key)}
                 >
                   {col.label}
-                  <span className="data-table__sort-indicator">
+                  <span className={styles.sortIndicator}>
                     {getSortIndicator(col.key)}
                   </span>
                 </th>
               ))}
-              <th className="data-table__header data-table__header--center">
+              <th className={`${styles.header} ${styles.headerCenter}`}>
                 Status
               </th>
             </tr>
@@ -92,7 +92,7 @@ function DataTable({ data }) {
               tree.map((node) => <TableRow key={node.id} node={node} />)
             ) : (
               <tr>
-                <td className="data-table__empty" colSpan={4}>
+                <td className={styles.empty} colSpan={4}>
                   No records found
                 </td>
               </tr>

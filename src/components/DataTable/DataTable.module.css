@@ -1,0 +1,102 @@
+.root {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e8eaf0;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filterLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4a5568;
+  margin-right: 4px;
+}
+
+.filterBtn {
+  padding: 6px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #4a5568;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filterBtn:hover {
+  background: #f7fafc;
+  border-color: #a0aec0;
+}
+
+.filterBtnActive {
+  background: #3b82f6;
+  color: #ffffff;
+  border-color: #3b82f6;
+}
+
+.filterBtnActive:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.wrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.header {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #f7fafc;
+  border-bottom: 2px solid #e8eaf0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.headerCenter {
+  text-align: center;
+}
+
+.headerSortable {
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.headerSortable:hover {
+  color: #3b82f6;
+}
+
+.sortIndicator {
+  margin-left: 4px;
+}
+
+.empty {
+  padding: 48px 16px;
+  text-align: center;
+  color: #a0aec0;
+  font-size: 14px;
+}

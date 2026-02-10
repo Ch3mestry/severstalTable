@@ -1,12 +1,12 @@
 import DataTable from "./components/DataTable/DataTable";
 import users from "./data/users";
-import "./App.css";
+import styles from "./App.module.css";
 
 function App() {
   return (
-    <div className="app">
-      <header className="app__header">
-        <h1 className="app__title">Users</h1>
+    <div>
+      <header className={styles.header}>
+        <h1 className={styles.title}>Users</h1>
       </header>
       <DataTable data={users} />
     </div>

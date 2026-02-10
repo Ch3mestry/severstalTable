@@ -1,8 +1,8 @@
-.app__header {
+.header {
   margin-bottom: 24px;
 }
 
-.app__title {
+.title {
   font-size: 24px;
   font-weight: 700;
   color: #1a202c;
